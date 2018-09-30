@@ -47,8 +47,8 @@ var good_letters=[];
          print_word+=" _ "
      }
 
-     }
     document.getElementById("hangman").textContent= print_word;
+}
 }
 document.onkeyup =function (event) {
 
@@ -74,19 +74,15 @@ for (var i = 0; i<good_letters.length; i++){
         wins ++;
         document.getElementById("outcome").textContent= "You Win    Game Over  " ;
         winsText.textContent = "wins: " + wins;
-    } 
+    } else if (guessesleft===0){
+       losses ++;
+        document.getElementById("outcome").textContent= "You Lose    Game Over  " ; 
+        lossesText.textContent = "losses: " + losses;
+    }
 }
-}
-    // else if (guessesleft===0)
-    // {
-    //    losses ++;
-    //     document.getElementById("outcome").textContent= "You Lose    Game Over  " ; 
-    //     lossesText.textContent = "losses: " + losses;
-    // }
-
     
-
-       
+}
+      
        
         winsText.textContent = "wins: " + wins;
         lossesText.textContent = "losses: " + losses;
