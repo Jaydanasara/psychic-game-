@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
+</head>
+<h1>Classic Hangman</h1>
+<body>
+  <h2 id="hangman">  </h2>  
+  </div>
+  <p id="directions-text">Press any Key to start</p>
+    <p id="guessesleft-text"></p>
+    <p id="wrongletters"></p>
+    <p id="wins-text"></p>
+    <p id="losses-text"></p>
+    <h1 id= "outcome"></h1> 
+</div>
+</body>
+<script>
+      var wins=0;
+    var losses=0;
+    var icl=[];
+    var guessesleft=9;
+    
+    var directionsText = document.getElementById("directions-text");
+    var guesseslefttext = document.getElementById("guessesleft-text");
+   
+    var winsText = document.getElementById("wins-text");
+    var lossesText = document.getElementById("losses-text");
+    
+  
+    
+    var words = ["nwa", "publicenemy", "llcoolj", "bigdaddykane"];
+    var word_to_guess = words[Math.floor(Math.random() * words.length)];
+var good_letters=[];
+ function print() {
+     var print_word="  "
+    document.getElementById("hangman").textContent=print_word;
+    for (var i = 0; i< word_to_guess.length; i++){
+        if (good_letters.indexOf (word_to_guess[i]) >-1) {
+            print_word+=" " + word_to_guess[i] + " ";
+     } else {
+         print_word+=" _ "
+     }
+
+     }
+    document.getElementById("hangman").textContent= print_word;
+}
+document.onkeyup =function (event) {
+
+    if (word_to_guess.indexOf(event.key) >-1){
+        good_letters.push (event.key);
+        
+ 
+        print();
+    }else {
+    icl.push(event.key);
+    guessesleft--;
+    document.getElementById("wrongletters").textContent= "incorrect Guesses:  " + icl
+    guesseslefttext.textContent = "Guesses Remaining: " + guessesleft ;
+}   console.log(icl)
+outcome();
+} 
+
+
+function outcome(){
+    if (word_to_guess===good_letters)
+    {
+        wins ++;
+        document.getElementById("outcome").textContent= "You Win    Game Over  " ;
+        winsText.textContent = "wins: " + wins;
+    } 
+    // else if (guessesleft===0)
+    // {
+    //    losses ++;
+    //     document.getElementById("outcome").textContent= "You Lose    Game Over  " ; 
+    //     lossesText.textContent = "losses: " + losses;
+    // }
+}
+    
+
+       
+       
+        winsText.textContent = "wins: " + wins;
+        lossesText.textContent = "losses: " + losses;
+
+
+</script>
+</html>
