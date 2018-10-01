@@ -1,24 +1,31 @@
 h1{
     text-align: center;
+    color: red
 }
 
 p{
 font-size: 30px;
-
+color:red
 }
 
 #hangman{
     text-align: center;
     font-size: 50px ;
+    color: white;
 }
 
 button{
     margin-left: 47%;
     margin-top: 20%;
+    height: 100px;
+    width: 140px;
+    background-color: red
 }
 
 body{
     height:100%;
     width:100%;
-    background-image:  url("assets/images/hiphop.jpg");
+    background-image:  url("../images/hiphop.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%
 }
