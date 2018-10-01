@@ -8,16 +8,18 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <script type="text/javascript" src="assets/javascript/game.js"></script>
 </head>
-<h1>Classic Hangman</h1>
+<h1>Classic Hip Hop Hangman</h1>
 <body>
   <h2 id="hangman">  </h2>  
   </div>
-  <p id="directions-text">Press any Key to start</p>
+  <p id="directions-text"></p>
     <p id="guessesleft-text"></p>
     <p id="wrongletters"></p>
     <p id="wins-text"></p>
     <p id="losses-text"></p>
     <h1 id= "outcome"></h1> 
+
+<button onclick="print()">click to start</button>
 </div>
 </body>
 <script>
@@ -34,10 +36,15 @@
     
   
     
-    var words = ["nwa", "publicenemy", "llcoolj", "bigdaddykane"];
+    var words = ["nwa","tupac", "rakim", "rundmc"];
     var word_to_guess = words[Math.floor(Math.random() * words.length)];
 var good_letters=[];
- function print() {
+
+
+
+
+
+function print() {
      var print_word="  "
     document.getElementById("hangman").textContent=print_word;
     for (var i = 0; i< word_to_guess.length; i++){
@@ -68,7 +75,7 @@ outcome();
 
 
 function outcome(){
-for (var i = 0; i<good_letters.length; i++){
+
     if (good_letters.length=== word_to_guess.length){
 
         wins ++;
@@ -80,9 +87,43 @@ for (var i = 0; i<good_letters.length; i++){
         lossesText.textContent = "losses: " + losses;
     }
 }
-    
-}
       
+// document.addEventListener("keydown", runScript);
+
+// function runScript(e) {
+
+//     var keyID = e.keyCode;
+
+//     switch (keyID) {
+//         case 13:
+//             guesseslefttext.textContent = "Please enter a valid key";
+//         case 37:
+//             guesseslefttext.textContent = "Please enter a valid key";
+//         case 38:
+//             guesseslefttext.textContent = "Please enter a valid key";
+//         case 39:
+//             guesseslefttext.textContent = "Please enter a valid key";
+//         case 40:
+//             guesseslefttext.textContent = "Please enter a valid key";
+//         case 32:
+//             guesseslefttext.textContent = "Please enter a valid key";
+//         case 17:
+//             guesseslefttext.textContent = "Please enter a valid key";
+//         case 16:
+//             guesseslefttext.textContent = "Please enter a valid key";
+//         case 32:
+//             guesseslefttext.textContent = "Please enter a valid key";
+//         case 9:
+//             guesseslefttext.textContent = "Please enter a valid key";
+//         case 20:
+//             guesseslefttext.textContent = "Please enter a valid key";
+//         case 18:
+//             guesseslefttext.textContent = "Please enter a valid key";
+//         case 91:
+//             guesseslefttext.textContent = "Please enter a valid key";
+//     }
+// }
+    
        
         winsText.textContent = "wins: " + wins;
         lossesText.textContent = "losses: " + losses;

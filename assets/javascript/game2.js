@@ -1,4 +1,4 @@
-// var words = ["nwa", "publicenemy", "llcoolj", "bigdaddykane"];
+// 
 // var wins = 0;
 // var losses = 0;
 // var guessesleft = 9
